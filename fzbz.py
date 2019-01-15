@@ -12,12 +12,12 @@ class FizzBuzz(object):
 
     def __call__(self) -> str:
         """Call."""
-        ret_str = ""
+        ret = []
         if self.__num % 3 == 0:
-            ret_str += "Fizz"
+            ret.append("Fizz")
         if self.__num % 5 == 0:
-            ret_str += "Buzz"
-        if not ret_str:
-            ret_str += str(self.__num)
+            ret.append("Buzz")
+        if not ret:
+            ret.append(str(self.__num))
         self.__num += 1
-        return ret_str
+        return ("").join(ret)
