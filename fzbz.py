@@ -10,7 +10,7 @@ class FizzBuzz(object):
         """Init."""
         self.__num = init
 
-    def __call__(self):
+    def __call__(self) -> str:
         """Call."""
         ret_str = ""
         if self.__num % 3 == 0:
@@ -20,3 +20,4 @@ class FizzBuzz(object):
         if not ret_str:
             ret_str += str(self.__num)
         self.__num += 1
+        return ret_str
