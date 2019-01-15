@@ -18,15 +18,8 @@ class FzBzTest(TestCase):
         for n in range(100):
             with self.subTest(n=n):
                 ret = self.obj()
-                exp = ""
-                if n % 3 == 0:
-                    exp += "Fizz"
-                if n % 5 == 0:
-                    exp += "Buzz"
-                if not exp:
-                    exp += str(n)
+                exp = "FizzBuzz" if n % 3 == 0 and n % 5 == 0 else \
+                    "Fizz" if n % 3 == 0 and n % 5 != 0 else \
+                    "Buzz" if n % 3 != 0 and n % 5 == 0 else \
+                    str(n)
                 self.assertEqual(ret, exp)
-# exp = "FizzBuzz" if n % 3 == 0 and n % 5 == 0 else \
-#     "Fizz" if n % 3 == 0 and n % 5 != 0 else \
-#     "Buzz" if n % 3 != 0 and n % 5 == 0 else \
-#     str(n)
